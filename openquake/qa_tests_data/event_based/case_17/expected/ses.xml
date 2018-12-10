@@ -12,7 +12,7 @@ xmlns:gml="http://www.opengis.net/gml"
         >
             <singlePlaneRupture
             id="149"
-            multiplicity="4"
+            multiplicity="6"
             >
                 <stochasticEventSets>
                     <SES
@@ -24,6 +24,11 @@ xmlns:gml="http://www.opengis.net/gml"
                     id="1"
                     >
                         639950127105
+                    </SES>
+                    <SES
+                    id="3"
+                    >
+                        639950127108 639950127109
                     </SES>
                 </stochasticEventSets>
                 <magnitude>
@@ -48,18 +53,18 @@ xmlns:gml="http://www.opengis.net/gml"
             </singlePlaneRupture>
             <singlePlaneRupture
             id="150"
-            multiplicity="5"
+            multiplicity="3"
             >
                 <stochasticEventSets>
                     <SES
                     id="1"
                     >
-                        644245094400 644245094403
+                        644245094400
                     </SES>
                     <SES
                     id="3"
                     >
-                        644245094401 644245094404
+                        644245094401
                     </SES>
                     <SES
                     id="2"
@@ -89,7 +94,7 @@ xmlns:gml="http://www.opengis.net/gml"
             </singlePlaneRupture>
             <singlePlaneRupture
             id="151"
-            multiplicity="4"
+            multiplicity="2"
             >
                 <stochasticEventSets>
                     <SES
@@ -101,11 +106,6 @@ xmlns:gml="http://www.opengis.net/gml"
                     id="3"
                     >
                         648540061697
-                    </SES>
-                    <SES
-                    id="2"
-                    >
-                        648540061698 648540061699
                     </SES>
                 </stochasticEventSets>
                 <magnitude>

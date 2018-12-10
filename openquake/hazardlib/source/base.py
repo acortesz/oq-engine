@@ -119,12 +119,21 @@ class BaseSeismicSource(metaclass=abc.ABCMeta):
                 self.serial, self.serial + self.num_ruptures)
         else:  # the serials have been generated in prefiltering
             serials = self.serial
-        if tom and unsplit:  # time-independent source
+        if tom and unsplit:  # unsplit time-independent source
             rates = numpy.array([rup.occurrence_rate for rup in ruptures])
             numpy.random.seed(self.serial)
             occurs = numpy.random.poisson(rates * tom.time_span
                                           * num_ses * num_samples)
             for rup, serial, num_occ in zip(ruptures, serials, occurs):
+                if num_occ:
+                    rup.serial = serial  # used as seed
+                    yield rup, num_occ
+        elif tom:  # split time-independent source
+            for rup, serial in zip(ruptures, serials):
+                numpy.random.seed(serial)
+                num_occ = numpy.random.poisson(
+                    rup.occurrence_rate * tom.time_span
+                    * num_ses * num_samples)
                 if num_occ:
                     rup.serial = serial  # used as seed
                     yield rup, num_occ

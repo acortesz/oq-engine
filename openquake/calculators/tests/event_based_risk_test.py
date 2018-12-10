@@ -137,7 +137,7 @@ class EventBasedRiskTestCase(CalculatorTestCase):
     @attr('qa', 'risk', 'event_based_risk')
     def test_case_2_sampling(self):
         self.run_calc(case_2.__file__, 'job_sampling.ini')
-        self.assertEqual(len(self.calc.datastore['events']), 20)
+        self.assertEqual(len(self.calc.datastore['events']), 17)
         # TODO: improve this test
 
     @attr('qa', 'risk', 'event_based_risk')
@@ -341,7 +341,7 @@ class EventBasedRiskTestCase(CalculatorTestCase):
     def test_case_4b(self):
         # case with site collection extracted from site_model.xml
         self.run_calc(case_4a.__file__, 'job.ini')
-        self.assertEqual(len(self.calc.datastore['events']), 5)
+        self.assertEqual(len(self.calc.datastore['events']), 2)
 
     @attr('qa', 'hazard', 'event_based_risk')
     def test_case_6c(self):
